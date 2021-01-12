@@ -1,5 +1,5 @@
 from monday.resources.base import BaseResource
-from monday.query_joins import create_update_query, get_update_query
+from monday import query_joins
 
 
 class UpdateResource(BaseResource):
@@ -7,10 +7,10 @@ class UpdateResource(BaseResource):
         super().__init__(token)
 
     def create_update(self, item_id, update_value):
-        query = create_update_query(item_id, update_value)
+        query = query_joins.create_update_query(item_id, update_value)
         return self.client.execute(query)
 
     def fetch_updates(self, limit, page=None):
-        query = get_update_query(limit, page)
+        query = query_joins.get_update_query(limit, page)
         return self.client.execute(query)
 

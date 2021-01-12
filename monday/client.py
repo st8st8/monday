@@ -7,7 +7,7 @@ monday.client
 """
 
 from .__version__ import __version__
-from .resources import ItemResource, UpdateResource, TagResource, BoardResource, UserResource, GroupResource
+from . import resources
 
 
 class MondayClient:
@@ -15,12 +15,13 @@ class MondayClient:
         """
         :param token: API Token for the new :class:`BaseResource` object.
         """
-        self.items = ItemResource(token=token)
-        self.updates = UpdateResource(token=token)
-        self.tags = TagResource(token=token)
-        self.boards = BoardResource(token=token)
-        self.users = UserResource(token=token)
-        self.groups = GroupResource(token=token)
+        self.items = resources.ItemResource(token=token)
+        self.updates = resources.UpdateResource(token=token)
+        self.tags = resources.TagResource(token=token)
+        self.boards = resources.BoardResource(token=token)
+        self.users = resources.UserResource(token=token)
+        self.groups = resources.GroupResource(token=token)
+        self.column_values = resources.ColumnValueResource(token=token)
 
     def __str__(self):
         return f'MondayClient {__version__}'

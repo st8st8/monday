@@ -74,7 +74,6 @@ def get_item_query(board, column, value):
                 }
             }
         }''' % (board, column, value)
-
     return query
 
 
@@ -94,6 +93,28 @@ def get_item_by_id_query(ids):
                 }
             }
         }''' % ids
+
+    return query
+
+
+def move_item_to_group_query(item_id, group_id):
+    query = '''mutation 
+        {
+            move_item_to_group  (item_id: %s, group_id, "%s") {
+                id
+            }
+        }''' % (item_id, group_id)
+
+    return query
+
+
+def archive_item_query(item_id):
+    query = '''mutation 
+        {
+            archive_item  (item_id: %s) {
+                id
+            }
+        }''' % item_id
 
     return query
 

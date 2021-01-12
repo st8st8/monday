@@ -5,4 +5,7 @@ from .boards import BoardResource
 from .users import UserResource
 from .groups import GroupResource
 
-__all__ = ['ItemResource', 'UpdateResource', 'TagResource', 'BoardResource', 'UserResource', 'GroupResource']
+__all__ = [
+    'ItemResource', 'UpdateResource', 'TagResource', 
+    'BoardResource', 'UserResource', 'GroupResource'
+]
