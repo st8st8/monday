@@ -21,7 +21,6 @@ class MondayClient:
         self.boards = resources.BoardResource(token=token)
         self.users = resources.UserResource(token=token)
         self.groups = resources.GroupResource(token=token)
-        self.column_values = resources.ColumnValueResource(token=token)
 
     def __str__(self):
         return f'MondayClient {__version__}'

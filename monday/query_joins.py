@@ -100,7 +100,7 @@ def get_item_by_id_query(ids):
 def move_item_to_group_query(item_id, group_id):
     query = '''mutation 
         {
-            move_item_to_group  (item_id: %s, group_id, "%s") {
+            move_item_to_group  (item_id: %s, group_id: "%s") {
                 id
             }
         }''' % (item_id, group_id)
